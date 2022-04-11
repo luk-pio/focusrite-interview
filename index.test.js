@@ -50,7 +50,7 @@ test.each([
             [12, 22, 32, 42, 2],
             [13, 23, 33, 43, 3],
             [14, 24, 34, 44, 4],
-                [1, 2, 3, 4, 5],
+            [1, 2, 3, 4, 5],
 
         ], calledNumbers: [1, 2, 3, 4, 5], expected: true
     },
@@ -75,6 +75,12 @@ test.each([
 
         ], calledNumbers: [1, 2, 3, 4, 5], expected: false
     },
+])('returns $expected when $description', ({description, board, calledNumbers, expected}) => {
+    const bingoBoard = new BingoBoard(board)
+    expect(bingoBoard.isBingo(calledNumbers)).toEqual(expected)
+});
+
+test.each([
     // Invalid input
     {
         description: "last column has 4 called", board: [
@@ -82,11 +88,24 @@ test.each([
             [12, 22, 32, 42, 52],
             [13, 23, 33, 43, 53],
             [14, 24, 34, 44, 54],
-            [1, 2, 3, 4, 55],
 
-        ], calledNumbers: [1, 2, 3, 4, 5], expected: false
+        ], calledNumbers: [1, 2, 3, 4, 5], expected: "Invalid rows count. Was: 4, expected: 5"
     },
-])('returns $expected when $description', ({description, board, calledNumbers, expected}) => {
-    const bingoBoard = new BingoBoard(board)
-    expect(bingoBoard.isBingo(calledNumbers)).toEqual(expected)
+    {
+        description: "last column has 4 called", board: [
+            [11, 21, 31, 41],
+            [12, 22, 32, 42],
+            [13, 23, 33, 43],
+            [14, 24, 34, 44],
+            [15, 25, 35, 45]
+
+        ], calledNumbers: [1, 2, 3, 4, 5], expected: "Invalid columns count. Was: 4, expected: 5"
+    }
+
+])("throws $expected when $description", ({description, board, calledNumbers, expected}) => {
+    const t = () => {
+        const bingoBoard = new BingoBoard(board)
+        return bingoBoard.isBingo(calledNumbers)
+    }
+    expect(t).toThrow(expected);
 });
