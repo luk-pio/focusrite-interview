@@ -1,0 +1,27 @@
+{
+  "name": "focusrite-interview",
+  "version": "1.0.0",
+  "description": "An algorithm for determining winning bingo boards",
+  "main": "index.ts",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luk-pio/focusrite-interview.git"
+  },
+  "author": "Łukasz Piotra",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luk-pio/focusrite-interview/issues"
+  },
+  "homepage": "https://github.com/luk-pio/focusrite-interview#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.3"
+  }
+}

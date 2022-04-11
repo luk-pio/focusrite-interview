@@ -7,7 +7,6 @@ function initializeHits() {
 }
 
  function isBingoBoardWinning(bingoBoard, calledNumbers) {
-    // This is a 5x5 array
      let hits = initializeHits();
      calledNumbers.forEach(calledNumber => {
         bingoBoard.forEach((row, rowNumber) => {
