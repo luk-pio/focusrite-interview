@@ -1,5 +1,23 @@
 # Bingo
 
+## Usage
+
+```bash
+npm install
+````
+
+To read game input from stdin:
+```shell
+npm start
+
+```
+
+To run tests:
+```shell
+npm test
+
+```
+
 ## Set up
 
 ### Before the interview

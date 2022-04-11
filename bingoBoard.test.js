@@ -1,4 +1,4 @@
-import {BingoBoard} from './index';
+import {BingoBoard} from './bingoBoard';
 
 test.each([
     // Winning Rows
